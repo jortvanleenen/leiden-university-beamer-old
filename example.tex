@@ -15,7 +15,7 @@
 
 \title{What Makes Leiden University so Great?}
 \subtitle{Its People}
-\author[surname1, surname2]{\texorpdfstring{%
+\author[surname1, surname2, surname3]{\texorpdfstring{%
     \begin{columns}%
         \begin{column}{0.5\paperwidth}%
             \begin{beamercolorbox}[center, sep=1ex]{author}%
@@ -30,7 +30,15 @@
             \end{beamercolorbox}%
         \end{column}%
     \end{columns}%
-}{T.Surname1, T.Surname2}}
+    \nointerlineskip%
+    \begin{columns}%
+    \begin{column}{1\paperwidth}%
+        \begin{beamercolorbox}[center, sep=1ex]{author}%
+            \usebeamerfont{author}T3.Surname3\ {\footnotesize(1234569)\, ---\\ \href{mailto:T.Surname3@leidenuniv.nl}{T.Surname3@leidenuniv.nl}}%
+        \end{beamercolorbox}%
+    \end{column}%
+\end{columns}%
+}{T.Surname1, T.Surname2, T.Surname3}}
 \institute[LU]{Leiden University}
 \date[\today]{Occassion, \today}
 \titlegraphic{\includegraphics[height=1.5cm]{logo-universiteitleiden-english.pdf}}
@@ -62,19 +70,19 @@
         \end{itemize}
     \end{frame}
 
-    {
-        \setbeamercolor{normal text}{fg=white, bg=darkblueLU}
-        \begin{frame}[b]
-            \setbeamercolor{closure}{bg=white, fg=white}
-            \begin{beamercolorbox}[wd=1\paperwidth,center, sep=1ex, rightskip=0.15\paperwidth]{title}
-                \usebeamerfont{title}\leftskip=0.15\paperwidth \noindent Questions?\par
-                \vspace{0.3\paperheight}
-            \end{beamercolorbox}
-            \begin{beamercolorbox}[wd=\paperwidth,left,leftskip=0.03\paperwidth]{closure}
-                \includegraphics[height=0.3\paperheight]{graphics/logo-universiteitleiden-english.pdf}
-            \end{beamercolorbox}
-        \end{frame}
-    }
+    \begin{frame}[b]
+        \setbeamercolor{closure}{bg=white, fg=white}
+            \begin{tikzpicture}[remember picture, overlay]
+                \fill[darkblueLU] (current page.north west) rectangle (current page.east);
+            \end{tikzpicture}
+        	\begin{beamercolorbox}[wd=1\paperwidth,center, sep=1ex, rightskip=0.15\paperwidth]{title}
+    		  \usebeamerfont{title}\leftskip=0.15\paperwidth \noindent Questions?\par
+            \vspace{0.3\paperheight}
+        \end{beamercolorbox}
+        \begin{beamercolorbox}[wd=\paperwidth,left,leftskip=0.03\paperwidth]{closure}
+            \includegraphics[height=0.3\paperheight]{graphics/logo-universiteitleiden-english.pdf}
+        \end{beamercolorbox}
+    \end{frame}
 
     \appendix
 
