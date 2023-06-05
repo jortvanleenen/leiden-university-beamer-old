@@ -1,0 +1,41 @@
+\mode<presentation>
+
+\defbeamertemplate*{title page}{leidenuniv}[1][]
+{
+    \begin{tikzpicture}[remember picture, overlay]
+        \fill[darkblueLU] (current page.north west) rectangle (current page.east);
+    \end{tikzpicture}
+
+    \begin{beamercolorbox}[wd=1\paperwidth,left, sep=1ex, rightskip=0.15\paperwidth]{title}
+        \usebeamerfont{title}\leftskip=0.15\paperwidth \noindent \inserttitle\par
+    \end{beamercolorbox}
+    \begin{columns}[t]
+        \begin{column}{.5\paperwidth}
+            \begin{beamercolorbox}[left, sep=1ex, leftskip=0.15\paperwidth]{subtitle}%
+                \usebeamerfont{subtitle}\usebeamercolor{subtitle}\insertsubtitle\par
+            \end{beamercolorbox}%
+        \end{column}
+        \begin{column}{.5\paperwidth}
+            \begin{beamercolorbox}[right, sep=1ex, rightskip=0.15\paperwidth]{subtitle}%
+                \usebeamerfont{institute}\insertinstitute\par
+                \usebeamerfont{date}\insertdate\par
+            \end{beamercolorbox}%
+        \end{column}
+    \end{columns}
+    \nointerlineskip%
+
+    \insertauthor
+
+    \begin{beamercolorbox}[wd=1\paperwidth,left,leftskip=0.03\paperwidth]{date}
+        \includegraphics[height=0.25\paperheight]{graphics/logo-universiteitleiden-english.pdf}
+    \end{beamercolorbox}
+}
+
+\defbeamertemplate*{itemize item}{lu}{%
+    \usebeamerfont*{itemize item}{$\vcenter{\hbox{\tiny$\bullet$}}$}%
+}
+\setlength{\leftmargini}{0.4cm}
+\setlength{\leftmarginii}{0.4cm}
+\defbeamertemplate*{itemize subitem}{lu}{\usebeamerfont*{itemize subitem}\textbf{-}}
+
+\mode<all>

@@ -1,0 +1,36 @@
+\mode<presentation>
+% Requirement
+\RequirePackage{tikz}
+\RequirePackage{babel}
+\RequirePackage{fontspec}
+
+% Options
+\DeclareOptionBeamer{style}{\PassOptionsToPackage{style=#1}{beamercolorthemelu}}
+\DeclareOptionBeamer{defaultfooter}{\PassOptionsToPackage{defaultfooter=#1}{beamerouterthemelu}}
+\ProcessOptionsBeamer
+
+% Themes
+\useinnertheme{lu}
+\useoutertheme{lu}
+\usecolortheme{lu}
+\usecolortheme{rose}
+
+\setbeamertemplate{navigation symbols}{}
+
+% Font-related
+\IfFontExistsTF{Minion Pro Regular.ttf}{%
+    \setsansfont{Minion Pro}[
+        Extension = .ttf,
+        UprightFont = * Regular,
+        BoldFont = * Bold,
+        ItalicFont = * Italic,
+        BoldItalicFont = * Bold Italic
+    ]}{}
+\usefonttheme{professionalfonts}
+\setbeamerfont{frametitle}{series=\bfseries, size=\LARGE}
+\setbeamerfont{framesubtitle}{series=\mdseries}
+\setbeamerfont{title}{series=\bfseries,size=\huge}
+\setbeamerfont{subtitle}{series=\mdseries}
+\setbeamerfont{footline}{size=\scriptsize}
+
+\mode<all>

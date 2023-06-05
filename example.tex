@@ -1,0 +1,86 @@
+% The theme's footer has an automatic translation for 'dutch', all other languages will display their footer in English by default. Manual changes can of course be made in 'beamerouterthemelu.sty'.
+\documentclass[english, aspectratio=169]{beamer}
+
+% OPTIONS FOR THEME:
+% - defaultfooter: if set, change the footer to display Leiden University's default message 'Discover the world at Leiden University' in Dutch or English depending on the set language (above) in the footline.
+%   Default: custom footer by theme
+%   Option(s): <none>
+% - style: if set, can be used to change the title page's author section background colour to the colour of your faculty of choice.
+%   Default: midblueLU (#8592BC), like the example PPTX presentation provided by Leiden University
+%   Option(s): social, science, humanities, archaeology, fgga, medicine, law
+\usetheme[style=science]{lu}
+
+\usepackage{appendixnumberbeamer}
+\graphicspath{{graphics/}}
+
+\title{What Makes Leiden University so Great?}
+\subtitle{Its People}
+\author[surname1, surname2]{\texorpdfstring{%
+    \begin{columns}%
+        \begin{column}{0.5\paperwidth}%
+            \begin{beamercolorbox}[center, sep=1ex]{author}%
+                \leftskip=0.15\paperwidth%
+                \usebeamerfont{author}T1.Surname1\ {\footnotesize(1234567)\, ---\\ \href{mailto:T.Surname1@leidenuniv.nl}{T.Surname1@leidenuniv.nl}}%
+            \end{beamercolorbox}%
+        \end{column}%
+        \begin{column}{0.5\paperwidth}%
+            \begin{beamercolorbox}[center, sep=1ex]{author}%
+                \usebeamerfont{author}T.Surname2\ {\footnotesize(1234568)\, ---\\ \href{mailto:T.Surname2@leidenuniv.nl}{T.Surname2@leidenuniv.nl}}%
+                \rightskip=0.15\paperwidth%
+            \end{beamercolorbox}%
+        \end{column}%
+    \end{columns}%
+}{T.Surname1, T.Surname2}}
+\institute[LU]{Leiden University}
+\date[\today]{Occassion, \today}
+\titlegraphic{\includegraphics[height=1.5cm]{logo-universiteitleiden-english.pdf}}
+
+
+\begin{document}
+
+    \begin{frame}[b]
+        \titlepage
+    \end{frame}
+
+    \begin{frame}{Some Block and Styling Examples}
+
+        \begin{definition}
+           \textbf{ Leiden university} is the \emph{oldest} institution of higher education in the Netherlands.
+        \end{definition}
+        \begin{alertblock}{Housing}
+            If you consider studying at Leiden University and come from far or abroad, start searching for a place to stay as soon as possible!
+        \end{alertblock}
+    \end{frame}
+
+    \begin{frame}{Itemise Example}
+        \begin{itemize}
+            \item This is the first item.
+            \item This is the second item.
+            \begin{itemize}
+                \item This is the first subitem.
+            \end{itemize}
+        \end{itemize}
+    \end{frame}
+
+    {
+        \setbeamercolor{normal text}{fg=white, bg=darkblueLU}
+        \begin{frame}[b]
+            \setbeamercolor{closure}{bg=white, fg=white}
+            \begin{beamercolorbox}[wd=1\paperwidth,center, sep=1ex, rightskip=0.15\paperwidth]{title}
+                \usebeamerfont{title}\leftskip=0.15\paperwidth \noindent Questions?\par
+                \vspace{0.3\paperheight}
+            \end{beamercolorbox}
+            \begin{beamercolorbox}[wd=\paperwidth,left,leftskip=0.03\paperwidth]{closure}
+                \includegraphics[height=0.3\paperheight]{graphics/logo-universiteitleiden-english.pdf}
+            \end{beamercolorbox}
+        \end{frame}
+    }
+
+    \appendix
+
+    \begin{frame}[allowframebreaks]{References}
+        % \bibliography{name}
+        % \bibliographystyle{style}
+    \end{frame}
+
+\end{document}
