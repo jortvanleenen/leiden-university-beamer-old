@@ -1,3 +1,4 @@
+![Titlepage](example-images/slide1.png)
 # Leiden University Beamer Theme
 A beamer theme that aims to closely mimic [Leiden University](https://www.leidenuniversity.nl/)'s presentation slides as provided in their [house style](https://huisstijl.leidenuniv.nl/en/).
 
@@ -25,3 +26,9 @@ To this repository applies the GNU-GPLv3 license.
 
 ## Thanks
 I would like to thank @TAdeJong and @Thyrum for their initial work on an unofficial beamer theme for Leiden University and sparking my interest to come up with an altered own version!
+
+## Additional Example Images
+![Titlepage](example-images/slide2.png)
+![Titlepage](example-images/slide3.png)
+![Titlepage](example-images/slide4.png)
+![Titlepage](example-images/slide5.png)
