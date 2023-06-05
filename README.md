@@ -2,8 +2,10 @@
 # Leiden University Beamer Theme
 A beamer theme that aims to closely mimic [Leiden University](https://www.leidenuniversity.nl/)'s presentation slides as provided in their [house style](https://huisstijl.leidenuniv.nl/en/).
 
+I am by no means an expert on the beamer class or LaTeX in general, so please, if you have any suggestions, feel free to create an issue or pull request!
+
 ## Getting Started
-It is designed to easily integrate with [Overleaf](https://www.overleaf.com). This repository can be downloaded as .zip file and uploaded to Overleaf as new project. To get started, I recommended modifying `example.tex` to your liking.
+It is designed to easily integrate with [Overleaf](https://www.overleaf.com). This repository can be downloaded as .zip file and uploaded to Overleaf as new project. To get started, I recommended modifying `example.tex` to your liking. 
 
 Feel free to remove the `README.md` file and the `example-images` directory. These are only required for the text you are currently reading here on GitHub and do not affect the actual presentation in any way.
 
