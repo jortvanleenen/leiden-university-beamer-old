@@ -35,4 +35,3 @@ I would like to thank @TAdeJong and @Thyrum for their initial work on an unoffic
 ![Titlepage](example-images/slide2.png)
 ![Titlepage](example-images/slide3.png)
 ![Titlepage](example-images/slide4.png)
-![Titlepage](example-images/slide5.png)
