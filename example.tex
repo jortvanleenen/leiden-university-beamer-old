@@ -23,7 +23,7 @@
                 \usebeamerfont{author}T1.Surname1\ {\footnotesize(1234567)\, ---\\ \href{mailto:T.Surname1@leidenuniv.nl}{T.Surname1@leidenuniv.nl}}%
             \end{beamercolorbox}%
         \end{column}%
-        \hskip-0.5pt % Prevent possible viewer issues concerning pixel snapping
+        \hskip-0.5pt
         \begin{column}{0.5\paperwidth}%
             \begin{beamercolorbox}[center, sep=1ex]{author}%
                 \usebeamerfont{author}T.Surname2\ {\footnotesize(1234568)\, ---\\ \href{mailto:T.Surname2@leidenuniv.nl}{T.Surname2@leidenuniv.nl}}%
@@ -32,6 +32,7 @@
         \end{column}%
     \end{columns}%
     \nointerlineskip%
+    \vspace{-1pt}%
     \begin{columns}%
     \begin{column}{1\paperwidth}%
         \begin{beamercolorbox}[center, sep=1ex]{author}%
@@ -57,8 +58,11 @@
            \textbf{ Leiden university} is the \emph{oldest} institution of higher education in the Netherlands.
         \end{definition}
         \begin{alertblock}{Housing}
-            If you consider studying at Leiden University and come from far or abroad, start searching for a place to stay as soon as possible!
+            If you consider studying at Leiden University and come from far or abroad, start searching for a place to stay \alert{as soon as possible}!
         \end{alertblock}
+        \begin{exampleblock}{Open}
+            Everyone is welcome!
+        \end{exampleblock}
     \end{frame}
 
     \begin{frame}{Itemise Example}
@@ -88,8 +92,7 @@
     \appendix
 
     \begin{frame}[allowframebreaks]{References}
-        % \bibliography{name}
-        % \bibliographystyle{style}
+        \printbibliography
     \end{frame}
 
 \end{document}

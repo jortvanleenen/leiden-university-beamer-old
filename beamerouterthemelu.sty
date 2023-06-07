@@ -6,7 +6,7 @@
 
 \setbeamertemplate{footline}{
     \begin{columns}[onlytextwidth]
-        \begin{column}{.9\paperwidth}
+        \begin{column}{.91\paperwidth}
             \begin{beamercolorbox}[ht=3ex,dp=1.5ex,left]{section in head/foot}%
                 \hspace*{.05\paperwidth}
                 \ifx\beamer@lu@defaultfooter\@empty
@@ -38,8 +38,9 @@
                 \usebeamerfont{title in head/foot}\insertshorttitle
                 \fi
                 \fi
-            \end{beamercolorbox}
+            \end{beamercolorbox}%
         \end{column}
+        \hskip-0.5pt
         \begin{column}{.1\paperwidth}
             \begin{beamercolorbox}[ht=3ex,dp=1.5ex,right]{section in head/foot}%
                 \insertframenumber{}
@@ -59,7 +60,7 @@
         \insertframetitle
         \ifx\insertframesubtitle\@empty%
         \else%
-        {\usebeamerfont{framesubtitle}\usebeamercolor[fg]{framesubtitle}\insertframesubtitle\strut\par}%
+        {\usebeamerfont{framesubtitle}\usebeamercolor[fg]{framesubtitle}\ \insertframesubtitle\strut\par}%
         \fi
     \end{beamercolorbox}
 }
