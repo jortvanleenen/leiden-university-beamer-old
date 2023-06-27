@@ -2,10 +2,10 @@
 # Leiden University Beamer Theme
 A beamer theme that aims to closely mimic [Leiden University](https://www.leidenuniversity.nl/)'s presentation slides as provided in their [house style](https://huisstijl.leidenuniv.nl/en/).
 
-I am by no means an expert on the beamer class or LaTeX in general, so please, if you have any suggestions, feel free to create an issue or pull request!
+I am by no means a LaTeX expert so please, if you have any suggestions, feel free to create an issue or pull request!
 
 ## Getting Started
-It is designed to easily integrate with [Overleaf](https://www.overleaf.com). This repository can be downloaded as .zip file and uploaded to Overleaf as new project. To get started, I recommended modifying `example.tex` to your liking. 
+It is designed to easily integrate with [Overleaf](https://www.overleaf.com). This repository can be downloaded as .zip file and uploaded to Overleaf as a new project. To get started, I recommended modifying `example.tex` to your liking. 
 
 Feel free to remove the `README.md` file and the `example-images` directory. These are only required for the text you are currently reading here on GitHub and do not affect the actual presentation in any way.
 
@@ -26,7 +26,7 @@ A language can be provided to the beamer class as option, this will then get pas
   - _Option(s): social, science, humanities, archaeology, fgga, medicine, law_
   
 ## Copyright
-To this repository applies the GNU-GPLv3 license.
+To this project applies the LaTeX Project Public License version 3 (LPPL Version 1.3c  2008-05-04).
 
 ## Thanks
 I would like to thank @TAdeJong and @Thyrum for their initial work on an unofficial beamer theme for Leiden University and sparking my interest to come up with an altered own version!
@@ -35,3 +35,6 @@ I would like to thank @TAdeJong and @Thyrum for their initial work on an unoffic
 ![Titlepage](example-images/slide2.png)
 ![Titlepage](example-images/slide3.png)
 ![Titlepage](example-images/slide4.png)
+![Titlepage](example-images/slide5.png)
+![Titlepage](example-images/slide6.png)
+![Titlepage](example-images/slide7.png)
