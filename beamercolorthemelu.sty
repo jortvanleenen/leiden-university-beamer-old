@@ -1,50 +1,57 @@
 \mode<presentation>
 
 \DeclareOptionBeamer{style}{\def\beamer@lu@style{#1}}
+\DeclareOptionBeamer{styleslidenumbering}{\def\beamer@lu@styleslidenumbering{#1}}
 \ProcessOptionsBeamer
 
-% Colours based on house style, verified to be in use by Leiden University
 \definecolor{darkblueLU}{HTML}{001158} % (primary colour)
-\definecolor{redLU}{HTML}{BE1908} % social
-\definecolor{orangeLU}{HTML}{F46E32} % science
-\definecolor{lightgreenLU}{HTML}{9EBA2E} % humanities
-\definecolor{darkgreenLU}{HTML}{2C712D} % archaeology
-\definecolor{turquoiseLU}{HTML}{34A3A9} % FGGA
-\definecolor{lightblueLU}{HTML}{5CB1EB} % medicine
-\definecolor{violetLU}{HTML}{B02079} % law
-% Colours based on elements in the example presentation by Leiden University
+
+\def\beamer@lu@stylesocial{social}
+\definecolor{redLU}{HTML}{BE1908}
+
+\def\beamer@lu@stylescience{science}
+\definecolor{orangeLU}{HTML}{F46E32}
+
+\def\beamer@lu@stylehumanities{humanities}
+\definecolor{lightgreenLU}{HTML}{9EBA2E}
+
+\def\beamer@lu@stylearchaeology{archaeology}
+\definecolor{darkgreenLU}{HTML}{2C712D}
+
+\def\beamer@lu@stylefgga{fgga}
+\definecolor{turquoiseLU}{HTML}{34A3A9}
+
+\def\beamer@lu@stylemedicine{medicine}
+\definecolor{lightblueLU}{HTML}{5CB1EB}
+
+\def\beamer@lu@stylelaw{law}
+\definecolor{violetLU}{HTML}{B02079}
+
+% Colours based on elements in the example PPTX by Leiden University
 \definecolor{midblueLU}{HTML}{8592BC}
 \definecolor{boxLU}{HTML}{E7E9F2}
 
-\def\beamer@lu@stylesocial{social}
-\def\beamer@lu@stylescience{science}
-\def\beamer@lu@stylehumanities{humanities}
-\def\beamer@lu@stylearchaeology{archaeology}
-\def\beamer@lu@stylefgga{fgga}
-\def\beamer@lu@stylemedicine{medicine}
-\def\beamer@lu@stylelaw{law}
-
 \ifx\beamer@lu@style\beamer@lu@stylesocial%
 \setbeamercolor*{palette primary}{fg=white,bg=redLU}
-\else% 
+\else%
 \ifx\beamer@lu@style\beamer@lu@stylescience%
 \setbeamercolor*{palette primary}{fg=white,bg=orangeLU}
-\else% 
+\else%
 \ifx\beamer@lu@style\beamer@lu@stylehumanities%
 \setbeamercolor*{palette primary}{fg=white,bg=lightgreenLU}
-\else% 
+\else%
 \ifx\beamer@lu@style\beamer@lu@stylearchaeology%
 \setbeamercolor*{palette primary}{fg=white,bg=darkgreenLU}
-\else% 
+\else%
 \ifx\beamer@lu@style\beamer@lu@stylefgga%
 \setbeamercolor*{palette primary}{fg=white,bg=turquoiseLU}
-\else% 
+\else%
 \ifx\beamer@lu@style\beamer@lu@stylemedicine%
 \setbeamercolor*{palette primary}{fg=white,bg=lightblueLU}
-\else% 
+\else%
 \ifx\beamer@lu@style\beamer@lu@stylelaw%
 \setbeamercolor*{palette primary}{fg=white,bg=violetLU}
-\else% 
+\else%
 \setbeamercolor*{palette primary}{fg=white,bg=midblueLU} % Default color
 \fi%
 \fi%
@@ -55,16 +62,25 @@
 \fi%
 
 \setbeamercolor{structure}{fg=darkblueLU,bg=white}
+
 \setbeamercolor*{palette secondary}{fg=white,bg=darkblueLU}
 \setbeamercolor*{palette tertiary}{fg=lightblueLU,bg=darkblueLU}
 \setbeamercolor*{palette quarternary}{bg=white,fg=black}
+
 \setbeamercolor*{frametitle}{bg=white,fg=darkblueLU}
-\setbeamercolor{framesubtitle}{fg=midblueLU}
-\setbeamercolor{title}{fg=white,bg=darkblueLU}
+\setbeamercolor*{framesubtitle}{fg=midblueLU}
+\setbeamercolor*{title}{fg=white,bg=darkblueLU}
 \setbeamercolor*{author}{parent=palette primary}
 \setbeamercolor*{alerted text}{fg=orangeLU}
 \setbeamercolor*{example text}{fg=darkgreenLU}
 \setbeamercolor*{section in head/foot}{parent=palette secondary}
 \setbeamercolor*{date in head/foot}{parent=palette primary}
 \setbeamercolor*{normal text}{fg=darkblueLU}
+
+\ifx\beamer@lu@styleslidenumbering\@empty
+\setbeamercolor*{slidenumbering}{parent=palette primary}
+\else
+\setbeamercolor*{slidenumbering}{parent=palette secondary}
+\fi
+
 \mode<all>

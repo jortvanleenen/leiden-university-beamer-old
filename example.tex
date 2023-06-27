@@ -1,14 +1,20 @@
-% The theme's footer has an automatic translation for 'dutch', all other languages will display their footer in English by default. Manual changes can of course be made in 'beamerouterthemelu.sty'.
+% The theme's footer has an automatic translation for 'dutch', all other languages will display their footer in English by default. Manual changes can be made in 'beamerouterthemelu.sty'.
 \documentclass[english, aspectratio=169]{beamer}
 
 % OPTIONS FOR THEME:
-% - defaultfooter: if set, change the footer to display Leiden University's default message 'Discover the world at Leiden University' in Dutch or English depending on the set language (above) in the footline.
-%   Default: custom footer by theme
-%   Option(s): <none>
-% - style: if set, can be used to change the title page's author section background colour to the colour of your faculty of choice.
-%   Default: midblueLU (#8592BC), like the example PPTX presentation provided by Leiden University
-%   Option(s): social, science, humanities, archaeology, fgga, medicine, law
-\usetheme[style=science]{lu}
+% - footer: if set, can be used to change the layout of the footer. Information displays the author short, institution short and title short. Empty removes all text except for the slide numbering. None removes the footer completely.
+%     Default: identical to Leiden University's PPTX, 'Discover the World at Leiden University' in either English or Dutch, see above on the documentclass option.
+%     Option(s): information, empty, none
+% - style: if set, can be used to change the accent colour to the colour of your faculty of choice.
+%     Default: midblueLU colour
+%     Option(s): social, science, humanities, archaeology, fgga, medicine, law
+% - styleslidenumbering: if set, change the colour of the background of the slide numbering to match the colour of the style option.
+%     Default: darkblueLU colour
+%     Option(s): <none> 
+% - addstandoutfootline: if set, adds the footline to the standout template.
+%     Default: footline is removed
+%     Option(s): <none>
+\usetheme[footer=information]{lu}
 
 \usepackage{appendixnumberbeamer}
 \graphicspath{{graphics/}}
@@ -20,82 +26,131 @@
 \subtitle{Its People}
 \author[surname1, surname2, surname3]{\texorpdfstring{%
     \begin{columns}%
-        \begin{column}{0.51\paperwidth}%
+        \begin{column}{.5\paperwidth}%
             \begin{beamercolorbox}[center, sep=1ex]{author}%
-                \leftskip=0.15\paperwidth%
-                \usebeamerfont{author}T1.Surname1\ {\footnotesize(1234567)\, ---\\ \href{mailto:T.Surname1@leidenuniv.nl}{T.Surname1@leidenuniv.nl}}%
+                \leftskip=.15\paperwidth%
+                \begin{minipage}{.35\paperwidth}
+                    \centering
+                    \usebeamerfont{author}T. Surname1\ {\footnotesize(1234567)\\ \href{mailto:T.Surname1@leidenuniv.nl}{T.Surname1@leidenuniv.nl}}%
+                \end{minipage}
             \end{beamercolorbox}%
         \end{column}%
-        \hskip-0.5pt
-        \begin{column}{0.5\paperwidth}%
+        \begin{column}{.5\paperwidth}%
             \begin{beamercolorbox}[center, sep=1ex]{author}%
-                \usebeamerfont{author}T.Surname2\ {\footnotesize(1234568)\, ---\\ \href{mailto:T.Surname2@leidenuniv.nl}{T.Surname2@leidenuniv.nl}}%
-                \rightskip=0.15\paperwidth%
+                \begin{minipage}{.35\paperwidth}
+                    \centering
+                    \usebeamerfont{author}T. Surname2\ {\footnotesize(1234568)\\ \href{mailto:T.Surname2@leidenuniv.nl}{T.Surname2@leidenuniv.nl}}%
+                \end{minipage}
+                \rightskip=.15\paperwidth%
             \end{beamercolorbox}%
         \end{column}%
     \end{columns}%
     \nointerlineskip%
-    \vspace{-1pt}%
     \begin{columns}%
     \begin{column}{1\paperwidth}%
         \begin{beamercolorbox}[center, sep=1ex]{author}%
-            \usebeamerfont{author}T3.Surname3\ {\footnotesize(1234569)\, ---\\ \href{mailto:T.Surname3@leidenuniv.nl}{T.Surname3@leidenuniv.nl}}%
+            \usebeamerfont{author}T. Surname3\ {\footnotesize(1234569)\\ \href{mailto:T.Surname3@leidenuniv.nl}{T.Surname3@leidenuniv.nl}}%
         \end{beamercolorbox}%
     \end{column}%
 \end{columns}%
 }{T.Surname1, T.Surname2, T.Surname3}}
-\institute[LU]{Leiden University}
-\date[\today]{Occassion, \today}
-\titlegraphic{\includegraphics[height=1.5cm]{logo-universiteitleiden-english.pdf}}
+\date[\today]{Occasion\\\today}
+% \titlegraphic can be provided to add the logo of an institution or organisation to the title page
+% \titlegraphic{%
+%     \includegraphics[height=0.3\paperheight]{logo-of-institution-or-organisation.pdf}%
+% }
 
 
 \begin{document}
-
     \begin{frame}[b]
         \titlepage
     \end{frame}
 
     \begin{frame}{Some Block and Styling Examples}
-
         \begin{definition}
-           \textbf{ Leiden university} is the \emph{oldest} institution of higher education in the Netherlands.
+            \textbf{ Leiden university} is the \emph{oldest} institution of higher education in the Netherlands.
         \end{definition}
+
         \begin{alertblock}{Housing}
-            If you consider studying at Leiden University and come from far or abroad, start searching for a place to stay \alert{as soon as possible}!
+            If you are considering studying at Leiden University and come from far or abroad, start searching for a place to stay \alert{as soon as possible}!
         \end{alertblock}
+
         \begin{exampleblock}{Open}
             Everyone is welcome!
         \end{exampleblock}
     \end{frame}
 
-    \begin{frame}{Itemise Example}
-        \begin{itemize}
-            \item This is the first item.
-            \item This is the second item.
+    \begin{frame}[fragile]{\texttt{\textbackslash accent} Usage}
+        This theme comes with a custom command called \texttt{\textbackslash accent}, which, by default, behaves exactly like \texttt{\textbackslash alert}. However, additionally, one of the theme's colours can be specified as an option to allow for easy highlighting in colours besides the default one.
+
+        \begin{table}[]
+            \centering
+            \begin{tabular}{c|c}
+                \hline
+                \accent{highlighted}             & \verb|\accent{highlighted}|             \\
+                \accent[lightblue]{highlighted}  & \verb|\accent[lightblue]{highlighted}|  \\
+                \accent[midblue]{highlighted}    & \verb|\accent[midblue]{highlighted}|    \\
+                \accent[darkblue]{highlighted}   & \verb|\accent[darkblue]{highlighted}|    \\
+                \accent[red]{highlighted}        & \verb|\accent[red]{highlighted}|        \\
+                \accent[lightgreen]{highlighted} & \verb|\accent[lightgreen]{highlighted}| \\
+                \accent[darkgreen]{highlighted}  & \verb|\accent[darkgreen]{highlighted}|  \\
+                \accent[turquoise]{highlighted}  & \verb|accent[turquoise]{highlighted}|   \\
+                \accent[violet]{highlighted}     & \verb|\accent[violet]{highlighted}|     \\
+                \hline
+            \end{tabular}
+        \end{table}
+    \end{frame}
+
+    \begin{frame}{List Examples}{And a Subtitle Example as Bonus}
+        \begin{columns}[onlytextwidth]%
+        \begin{column}{.5\textwidth}%
+        \textbf{Itemize}
+        
             \begin{itemize}
-                \item This is the first subitem.
+                \item This is the first item.
+                \item This is the second item.
+                \begin{itemize}
+                    \item This is the first subitem.
+                    \begin{itemize}
+                        \item This is the first subsubitem.
+                    \end{itemize}
+                \end{itemize}
             \end{itemize}
-        \end{itemize}
+        \end{column}%
+        \begin{column}{.5\textwidth}%
+            \textbf{Enumerate}
+
+            \begin{enumerate}
+                \item This is the first item.
+                \item This is the second item.
+                \begin{enumerate}
+                    \item This is the first subitem.
+                    \begin{enumerate}
+                        \item This is the first subsubitem.
+                    \end{enumerate}
+                \end{enumerate}
+            \end{enumerate}
+        \end{column}%
+    \end{columns}%
     \end{frame}
 
-    \begin{frame}[b]
-        \setbeamercolor{closure}{bg=white, fg=white}
-            \begin{tikzpicture}[remember picture, overlay]
-                \fill[darkblueLU] (current page.north west) rectangle (current page.east);
-            \end{tikzpicture}
-        	\begin{beamercolorbox}[wd=1\paperwidth,center, sep=1ex, rightskip=0.15\paperwidth]{title}
-    		  \usebeamerfont{title}\leftskip=0.15\paperwidth \noindent Questions?\par
-            \vspace{0.3\paperheight}
-        \end{beamercolorbox}
-        \begin{beamercolorbox}[wd=\paperwidth,left,leftskip=0.03\paperwidth]{closure}
-            \includegraphics[height=0.3\paperheight]{graphics/logo-universiteitleiden-english.pdf}
-        \end{beamercolorbox}
+    \begin{frame}[fragile]{Listings Template}
+        Various styles have been provided with this theme for external tools. See the \texttt{styles} folder for external library and application styles. LaTeX-related styles have been added to \texttt{beamerthemelu.sty}. As an example, take the following code listing to which the Listings style \texttt{lu} has been applied.
+
+        \begin{lstlisting}[language=python, style=lu]
+print('Hello world!') # An example of Hello World in Python
+        \end{lstlisting}
     \end{frame}
 
-    \appendix
+    \begin{frame}[c, standout]{Standout}
+        This template reverses the colour usage. It could, for example, be used to review or recap information or draw special attention to a particular aspect.
+    \end{frame}
 
+    \begin{frame}[closure]{Closure can be used as a template for a final slide. Questions?}
+    \end{frame}
+
+    % \appendix
     % \begin{frame}[allowframebreaks]{References}
     %     \printbibliography
     % \end{frame}
-
 \end{document}

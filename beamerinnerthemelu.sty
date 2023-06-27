@@ -1,5 +1,8 @@
 \mode<presentation>
 
+\DeclareOptionBeamer{addstandoutfootline}{\def\beamer@lu@addstandoutfootline{#1}}
+\ProcessOptionsBeamer
+
 \defbeamertemplate*{title page}{leidenuniv}[1][]
 {
     \begin{tikzpicture}[remember picture, overlay]
@@ -10,27 +13,47 @@
         \usebeamerfont{title}\leftskip=0.15\paperwidth \noindent \inserttitle\par
     \end{beamercolorbox}
 
-    \begin{columns}[t]
-        \begin{column}{.5\paperwidth}
-            \begin{beamercolorbox}[left, sep=1ex, leftskip=0.15\paperwidth]{subtitle}%
-                \usebeamerfont{subtitle}\usebeamercolor{subtitle}\insertsubtitle\par
-            \end{beamercolorbox}%
-        \end{column}
-        \begin{column}{.5\paperwidth}
-            \begin{beamercolorbox}[right, sep=1ex, rightskip=0.15\paperwidth]{subtitle}%
-                \usebeamerfont{institute}\insertinstitute\par
-                \usebeamerfont{date}\insertdate\par
-            \end{beamercolorbox}%
-        \end{column}
-    \end{columns}
     \nointerlineskip%
 
-    \insertauthor
+    \begin{columns}[T]%
+        \begin{column}{0.7\paperwidth}%
+            \begin{beamercolorbox}[left, leftskip=.15\paperwidth, sep=.5ex]{title}%
+                \usebeamerfont{subtitle}\usebeamercolor{subtitle}\insertsubtitle\par%
+            \end{beamercolorbox}%
+        \end{column}%
+        \begin{column}{0.3\paperwidth}%
+            \begin{beamercolorbox}[right, rightskip=0.15\paperwidth, sep=.5ex]{title}
+                \usebeamerfont{date}\insertdate\par
+            \end{beamercolorbox}
+        \end{column}%
+    \end{columns}%
 
-    \begin{beamercolorbox}[wd=1\paperwidth,left,leftskip=0.03\paperwidth]{date}
-        \includegraphics[height=0.25\paperheight]{graphics/logo-universiteitleiden-english.pdf}
-    \end{beamercolorbox}
+    \ifx\beamer@author\@empty
+    \else
+    \insertauthor
+    \nointerlineskip%
+    \fi
+
+    \begin{columns}
+        \begin{column}{.5\paperwidth}
+            \leftskip=.03\paperwidth
+            \begin{beamercolorbox}{date}
+                \includegraphics[height=0.3\paperheight]{logo-universiteitleiden-english.pdf}
+            \end{beamercolorbox}
+        \end{column}
+        \begin{column}{.5\paperwidth}
+            \begin{beamercolorbox}[right]{date}
+                \inserttitlegraphic
+            \end{beamercolorbox}
+            \rightskip=.03\paperwidth
+        \end{column}
+    \end{columns}
 }
+
+\def\ps@navigation@titlepage{%
+    \setbeamertemplate{footline}[titlepage footline]
+    \@nameuse{ps@navigation}}
+\addtobeamertemplate{title page}{\thispagestyle{navigation@titlepage}}{}
 
 \defbeamertemplate*{itemize item}{lu}{%
     \usebeamerfont*{itemize item}{$\vcenter{\hbox{\tiny$\bullet$}}$}%
@@ -38,5 +61,53 @@
 \setlength{\leftmargini}{0.4cm}
 \setlength{\leftmarginii}{0.4cm}
 \defbeamertemplate*{itemize subitem}{lu}{\usebeamerfont*{itemize subitem}\textbf{-}}
+
+\defbeamertemplate*{frametitle}{closure}{%
+\setbeamercolor{closure}{bg=white, fg=white}
+\vspace{-1pt}
+\begin{beamercolorbox}[wd=1\paperwidth,center, sep=1ex, rightskip=0.15\paperwidth, ht=0.62\paperheight]{title}
+\usebeamerfont{title}\leftskip=0.15\paperwidth \noindent \insertframetitle \par
+\vspace{0.3\paperheight}
+\end{beamercolorbox}
+
+\begin{beamercolorbox}[wd=\paperwidth,left,leftskip=0.03\paperwidth]{closure}
+\includegraphics[height=0.3\paperheight]{graphics/logo-universiteitleiden-english.pdf}
+\end{beamercolorbox}
+}
+
+\providebool{lu@closure}
+\define@key{beamerframe}{closure}[true]{
+\booltrue{lu@closure}
+\begingroup
+\setbeamertemplate{frametitle}[closure]
+}
+
+\apptocmd{\beamer@reseteecodes}{%
+\ifbool{lu@closure}{%
+\endgroup
+\boolfalse{lu@closure}
+}{}
+}{}{}
+
+\providebool{lu@standout}
+\define@key{beamerframe}{standout}[true]{
+\booltrue{lu@standout}
+\begingroup
+\color{white}
+\setbeamercolor{background canvas}{bg=darkblueLU}
+\setbeamercolor{frametitle}{fg=white,bg=darkblueLU}
+\setbeamercolor{framesubtitle}{fg=white,bg=darkblueLU}
+\ifx\beamer@lu@addstandoutfootline\@empty%
+\else%
+\setbeamertemplate{footline}{}%
+\fi%
+}
+
+\apptocmd{\beamer@reseteecodes}{%
+\ifbool{lu@standout}{%
+\endgroup
+\boolfalse{lu@standout}
+}{}
+}{}{}
 
 \mode<all>
