@@ -13,27 +13,28 @@
 % 
 % The Current Maintainer of this work is J.P. van Leenen.
 
-% The theme's footer has an automatic translation for 'dutch', all other languages will display their footer in English by default. Manual changes can be made in 'beamerouterthemelu.sty'.
+% OPTION: The theme's footer has an automatic translation for 'dutch', all other languages will display their footer in English by default. Manual changes can be made in 'beamerouterthemelu.sty'.
 \documentclass[english, aspectratio=169]{beamer}
 
 % OPTIONS FOR THEME:
 % - footer: if set, can be used to change the layout of the footer. Information displays the author short, institution short and title short. Empty removes all text except for the slide numbering. None removes the footer completely.
-%     Default: identical to Leiden University's PPTX, 'Discover the World at Leiden University' in either English or Dutch, see above on the documentclass option.
+%     Default: 'Discover the World at Leiden University' in either English or Dutch, see above on the documentclass option.
 %     Option(s): information, empty, none
 % - style: if set, can be used to change the accent colour to the colour of your faculty of choice.
-%     Default: midblueLU colour
+%     Default: midblueLU (#8592BC)
 %     Option(s): social, science, humanities, archaeology, fgga, medicine, law
 % - styleslidenumbering: if set, change the colour of the background of the slide numbering to match the colour of the style option.
-%     Default: darkblueLU colour
+%     Default: darkblueLU (#001158)
 %     Option(s): <none> 
 % - addstandoutfootline: if set, adds the footline to the standout template.
-%     Default: footline is removed
+%     Default: footline is removed.
 %     Option(s): <none>
-\usetheme[footer=information]{lu}
+\usetheme[]{lu}
 
 \usepackage{appendixnumberbeamer}
 \graphicspath{{graphics/}}
 
+% OPTION: optional for references
 % \RequirePackage[style=numeric]{biblatex}
 % \addbibresource{literature.bib}
 
@@ -70,7 +71,7 @@
 \end{columns}%
 }{T.Surname1, T.Surname2, T.Surname3}}
 \date[\today]{Occasion\\\today}
-% \titlegraphic can be provided to add the logo of an institution or organisation to the title page
+% OPTION: \titlegraphic can be provided to add the logo of an institution or organisation to the title page
 % \titlegraphic{%
 %     \includegraphics[height=0.3\paperheight]{logo-of-institution-or-organisation.pdf}%
 % }
