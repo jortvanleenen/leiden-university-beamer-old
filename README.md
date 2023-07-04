@@ -10,7 +10,7 @@ The Beamer class and, therefore, this theme, can be used with the following inst
 To get started, I recommended modifying `example.tex` to your liking. Feel free to remove the `README.md` file and the `example-images` directory. These are only required for the text you are currently reading here on GitHub and do not affect the actual presentation in any way.
 
 **For Overleaf**\
-It is designed to easily integrate with Overleaf and has, therefore, additionally been made [available as Template on the Overleaf platform](https://www.overleaf.com/latex/templates). Copying the template that has been made available is the easiest when working on Overleaf.
+It is designed to easily integrate with Overleaf and has, therefore, additionally been made [available as Template on the Overleaf platform](https://www.overleaf.com/latex/templates/leiden-university-beamer-theme/ryfcpypnvzhr). Copying the template that has been made available is the easiest when working on Overleaf.
 
 **For Other Applications**\
 This repository can be downloaded as an archive and extracted at the location of your liking.
