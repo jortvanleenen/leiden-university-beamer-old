@@ -1,3 +1,12 @@
+> ⚠️ **Deprecated Theme**
+>
+> This Beamer theme is based on the *old* Leiden University house style.
+> It is no longer actively maintained or supported.
+>
+> For the current (actively developed) theme based on the new house style, see:
+> https://github.com/jortvanleenen/leiden-university-beamer
+
+
 ![Titlepage](example-images/slide1.png)
 # Leiden University Beamer Theme
 A beamer theme that aims to closely mimic [Leiden University](https://www.leidenuniversity.nl/)'s presentation slides as provided in their [house style](https://huisstijl.leidenuniv.nl/en/).
